@@ -18,10 +18,8 @@ function buildCloudFrontFunctions() {
   const sourceDir = path.join(__dirname, "../src/");
   const outputDir = path.join(__dirname, "../dist/src");
 
-  // Recursively find all .ts files
   const tsFiles = findTypeScriptFiles(sourceDir);
 
-  // Process each file
   tsFiles.forEach((sourcePath) => {
     const relativePath = path.relative(sourceDir, sourcePath);
     const outputPath = path.join(outputDir, relativePath.replace(".ts", ".js"));
@@ -39,10 +37,8 @@ function findTypeScriptFiles(dir: string): string[] {
     const stat = fs.statSync(filePath);
 
     if (stat.isDirectory()) {
-      // Recursively search directories
       results = results.concat(findTypeScriptFiles(filePath));
     } else if (file.endsWith(".ts")) {
-      // Add TypeScript files
       results.push(filePath);
     }
   });
@@ -61,7 +57,6 @@ function transpileAndSaveFile(sourcePath: string, outputPath: string) {
     },
   }).outputText;
 
-  // Ensure output directory exists
   const outputDir = path.dirname(outputPath);
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });

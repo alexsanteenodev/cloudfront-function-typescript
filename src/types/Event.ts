@@ -3,7 +3,6 @@
  * Original source: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aws-cloudfront-function
  * License: MIT
  */
-
 export interface Event {
   version: "1.0";
   context: Context;
