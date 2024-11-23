@@ -1,0 +1,10 @@
+# Node
+node_modules
+dist
+
+# CDK
+.aws-sam
+cdk.context.json
+
+# Mac
+.DS_Store
