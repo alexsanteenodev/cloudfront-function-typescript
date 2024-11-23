@@ -1,6 +1,7 @@
 # CloudFront TypeScript Example
 
 This repository demonstrates how to write, test, and deploy AWS CloudFront Functions using TypeScript. The project includes a sample function, unit tests, and an AWS CDK stack for deployment.
+[Medium Article](https://medium.com/@o.hanhaliuk/building-testable-cloudfront-functions-with-typescript-3258e0fca6f4)
 
 ## Features
 
